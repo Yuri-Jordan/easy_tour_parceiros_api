@@ -15,9 +15,14 @@ class CreatePontosTable extends Migration
     {
         Schema::create('pontos', function (Blueprint $table) {
           $table->increments('id');
-          $table->bigInteger('categoria_parceiro_id')->unsigned();
+          $table->bigInteger('categoria_ponto_id')->unsigned();
+          $table->foreign('categoria_ponto_id')
+                ->references('id')
+                ->on('categoria_pontos');
           $table->bigInteger('proprietario_id')->unsigned();
-
+          $table->foreign('proprietario_id')
+                ->references('id')
+                ->on('parceiros');
           $table->string('nome', 100);
           $table->text('descricao');
           $table->decimal('latitude', 20, 14);

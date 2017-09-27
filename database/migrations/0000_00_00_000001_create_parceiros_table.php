@@ -16,6 +16,10 @@ class CreateParceirosTable extends Migration
         Schema::create('parceiros', function (Blueprint $table) {
 
             $table->increments('id');
+            $table->bigInteger('categoria_parceiros_id')->unsigned();
+            $table->foreign('categoria_parceiros_id')
+                  ->references('id')
+                  ->on('categoria_parceiros');
 
             $table->char('cpf', 11);
             $table->char('cnpj', 14);
