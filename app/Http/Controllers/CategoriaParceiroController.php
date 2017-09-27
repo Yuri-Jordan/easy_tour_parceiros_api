@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Illuminate\Http\Response;
+use App\CategoriaParceiro;
 
 class CategoriaParceiroController extends Controller
 {
+    protected $cp;
+
+    public function __construct(CategoriaParceiro $catPar){
+      $this->cp = $catPar;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class CategoriaParceiroController extends Controller
      */
     public function index()
     {
-        //
+        return $this->cp->getAllCategoriaParceiros();
     }
 
     /**
@@ -34,7 +41,9 @@ class CategoriaParceiroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      return $this->cp->criarCategoriaParceiros($request);
+
     }
 
     /**
@@ -45,7 +54,10 @@ class CategoriaParceiroController extends Controller
      */
     public function show($id)
     {
-        //
+        $cp = $this->cp->buscarCategoriaParceiros($id);
+        if(!$cp) return 'não encontrado';
+
+        return $cp;
     }
 
     /**
@@ -79,6 +91,9 @@ class CategoriaParceiroController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $cp = $this->cp->excluirCategoriaParceiros($id);
+      if(!$cp) return 'não encontrado';
+
+      return $cp;
     }
 }

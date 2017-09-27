@@ -14,7 +14,7 @@ class AddForeignKeysPontosTable extends Migration
     public function up()
     {
         Schema::table('pontos', function(Blueprint $table){
-          $table->foreign('parceiro_id')->references('id')->on('parceiros');
+          $table->foreign('proprietario_id')->references('id')->on('parceiros');
           $table->foreign('categoria_parceiro_id')->references('id')->on('categoria_parceiros');
         });
     }
@@ -26,9 +26,9 @@ class AddForeignKeysPontosTable extends Migration
      */
     public function down()
     {
-      Schema::table('pontos', function(Blueprint $table){
-        $table->dropForeign('pontos_categoria_parceiro_id_foreign');
-        $table->dropForeign('pontos_parceiro_id_foreign');
-      });
+      // Schema::table('pontos', function(Blueprint $table){
+      //   $table->dropForeign('pontos_categoria_parceiro_id_foreign');
+      //   $table->dropForeign('pontos_parceiro_id_foreign');
+      // });
     }
 }

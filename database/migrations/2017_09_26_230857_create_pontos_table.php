@@ -16,7 +16,7 @@ class CreatePontosTable extends Migration
         Schema::create('pontos', function (Blueprint $table) {
           $table->increments('id');
           $table->bigInteger('categoria_parceiro_id')->unsigned();
-          $table->bigInteger('parceiro_id')->unsigned();
+          $table->bigInteger('proprietario_id')->unsigned();
 
           $table->string('nome', 100);
           $table->text('descricao');
