@@ -14,8 +14,22 @@ class CreatePontosTable extends Migration
     public function up()
     {
         Schema::create('pontos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->bigInteger('categoria_parceiro_id')->unsigned();
+          $table->bigInteger('parceiro_id')->unsigned();
+
+          $table->string('nome', 100);
+          $table->text('descricao');
+          $table->decimal('latitude', 20, 14);
+          $table->double('longitude', 20, 14);
+          $table->string('cidade', 100);
+          $table->string('uf', 100);
+          $table->string('pais', 100);
+          $table->decimal('media_avaliacao', 5, 4);
+          $table->bigInteger('qte_avaliacoes');
+
+          $table->timestamps();
+
         });
     }
 
@@ -26,6 +40,6 @@ class CreatePontosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pontos');
+        Schema::dropIfExists('pontos')->onDelete('cascade');
     }
 }

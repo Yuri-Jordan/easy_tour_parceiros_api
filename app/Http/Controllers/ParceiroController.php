@@ -13,7 +13,7 @@ class ParceiroController extends Controller
      */
     public function index()
     {
-        
+        return("index");
     }
 
     /**

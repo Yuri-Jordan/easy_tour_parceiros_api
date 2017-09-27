@@ -15,6 +15,10 @@ class CreateCategoriaParceirosTable extends Migration
     {
         Schema::create('categoria_parceiros', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('nome', 100);
+            $table->string('tipo', 100);
+
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateCategoriaParceirosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria_parceiros');
+        Schema::dropIfExists('categoria_parceiros')->onDelete('cascade');
     }
 }

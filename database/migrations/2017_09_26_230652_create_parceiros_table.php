@@ -14,7 +14,15 @@ class CreateParceirosTable extends Migration
     public function up()
     {
         Schema::create('parceiros', function (Blueprint $table) {
+
             $table->increments('id');
+
+            $table->char('cpf', 11);
+            $table->char('cnpj', 14);
+            $table->string('nome_fantasia', 100);
+            $table->string('razao_social', 100);
+            $table->string('endereco', 100);
+
             $table->timestamps();
         });
     }
@@ -26,6 +34,6 @@ class CreateParceirosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parceiros');
+        Schema::dropIfExists('parceiros')->onDelete('cascade');
     }
 }
