@@ -80,7 +80,10 @@ class CategoriaParceiroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $cp = $this->cp->atualizarCategoriaParceiro($request, $id);
+      if(!$cp) return 'não encontrado';
+
+      return $cp;
     }
 
     /**

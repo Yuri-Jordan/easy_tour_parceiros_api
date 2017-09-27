@@ -44,4 +44,16 @@ class CategoriaParceiro extends Model
       return $cp;
 
     }
+
+    public function atualizarCategoriaParceiro(Request $req, $id){
+      $cp = self::find($id);
+
+      if(is_null($cp))
+        return false;
+
+      $cp->fill($req->all());
+      $cp->save();
+      
+      return  $cp;
+    }
 }
