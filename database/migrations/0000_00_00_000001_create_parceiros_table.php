@@ -20,7 +20,7 @@ class CreateParceirosTable extends Migration
             $table->foreign('categoria_parceiros_id')
                   ->references('id')
                   ->on('categoria_parceiros');
-
+                  ->onDelete('cascade');
             $table->char('cpf', 11);
             $table->char('cnpj', 14);
             $table->string('nome_fantasia', 100);

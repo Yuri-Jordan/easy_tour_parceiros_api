@@ -18,11 +18,13 @@ class CreatePontosTable extends Migration
           $table->bigInteger('categoria_ponto_id')->unsigned();
           $table->foreign('categoria_ponto_id')
                 ->references('id')
-                ->on('categoria_pontos');
+                ->on('categoria_pontos')
+                ->onDelete('cascade');
           $table->bigInteger('proprietario_id')->unsigned();
           $table->foreign('proprietario_id')
                 ->references('id')
-                ->on('parceiros');
+                ->on('parceiros')
+                ->onDelete('cascade');;
           $table->string('nome', 100);
           $table->text('descricao');
           $table->decimal('latitude', 20, 14);

@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Parceiro;
 
 class ParceiroController extends Controller
 {
+
+    protected $parceiro;
+
+    public function __construct(Parceiro $p){
+      $this->parceiro = $p;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class ParceiroController extends Controller
      */
     public function index()
     {
-        return("index");
+        return $this->parceiro->getAllParceiros();
     }
 
     /**
@@ -32,10 +39,12 @@ class ParceiroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request)
+     {
+
+       return $this->parceiro->criarParceiros($request);
+
+     }
 
     /**
      * Display the specified resource.
@@ -43,10 +52,13 @@ class ParceiroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+     public function show($id)
+     {
+         $cp = $this->parceiro->buscarParceiros($id);
+         if(!$cp) return 'não encontrado';
+
+         return $cp;
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -66,10 +78,13 @@ class ParceiroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+     public function update(Request $request, $id)
+     {
+       $cp = $this->parceiro->atualizarParceiros($request, $id);
+       if(!$cp) return 'não encontrado';
+
+       return $cp;
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -77,8 +92,11 @@ class ParceiroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+     public function destroy($id)
+     {
+       $cp = $this->parceiro->excluirParceiros($id);
+       if(!$cp) return 'não encontrado';
+
+       return $cp;
+     }
 }

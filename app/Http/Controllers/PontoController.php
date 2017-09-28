@@ -7,15 +7,20 @@ use Illuminate\Http\Request;
 
 class PontoController extends Controller
 {
+    protected $ponto;
+
+    public function __construct(Ponto $p){
+      $this->ponto = $p;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function index()
+     {
+         return $this->ponto->getAllPontos();
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -33,10 +38,12 @@ class PontoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request)
+     {
+
+       return $this->ponto->criarPontos($request);
+
+     }
 
     /**
      * Display the specified resource.
@@ -44,10 +51,13 @@ class PontoController extends Controller
      * @param  \App\Ponto  $ponto
      * @return \Illuminate\Http\Response
      */
-    public function show(Ponto $ponto)
-    {
-        //
-    }
+     public function show($id)
+     {
+         $cp = $this->ponto->buscarPontos($id);
+         if(!$cp) return 'não encontrado';
+
+         return $cp;
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -67,10 +77,13 @@ class PontoController extends Controller
      * @param  \App\Ponto  $ponto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ponto $ponto)
-    {
-        //
-    }
+     public function update(Request $request, $id)
+     {
+       $cp = $this->ponto->atualizarPontos($request, $id);
+       if(!$cp) return 'não encontrado';
+
+       return $cp;
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +91,11 @@ class PontoController extends Controller
      * @param  \App\Ponto  $ponto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ponto $ponto)
-    {
-        //
-    }
+     public function destroy($id)
+     {
+       $cp = $this->ponto->excluirPontos($id);
+       if(!$cp) return 'não encontrado';
+
+       return $cp;
+     }
 }
