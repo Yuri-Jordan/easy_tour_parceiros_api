@@ -1,6 +1,5 @@
 <?php
 use Faker\Generator as Faker;
-use Faker\Provider\pt_BR\Person;
 
 $factory->define(App\Parceiro::class, function (Faker $faker) {
 

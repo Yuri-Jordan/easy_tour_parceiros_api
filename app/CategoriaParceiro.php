@@ -45,7 +45,7 @@ class CategoriaParceiro extends Model
 
     }
 
-    public function atualizarCategoriaParceiro(Request $req, $id){
+    public function atualizarCategoriaParceiros(Request $req, $id){
       $cp = self::find($id);
 
       if(is_null($cp))
@@ -53,7 +53,7 @@ class CategoriaParceiro extends Model
 
       $cp->fill($req->all());
       $cp->save();
-      
+
       return  $cp;
     }
 }
