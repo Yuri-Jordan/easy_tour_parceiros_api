@@ -38,6 +38,6 @@ class CreateParceirosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parceiros')->onDelete('cascade');
+        Schema::dropIfExists('parceiros');
     }
 }

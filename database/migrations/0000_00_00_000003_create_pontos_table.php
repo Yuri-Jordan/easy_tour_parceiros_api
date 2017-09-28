@@ -45,6 +45,6 @@ class CreatePontosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pontos')->onDelete('cascade');
+        Schema::dropIfExists('pontos');
     }
 }

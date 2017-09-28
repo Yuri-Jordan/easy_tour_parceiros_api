@@ -30,6 +30,6 @@ class CreateCategoriaParceirosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria_parceiros')->onDelete('cascade');
+        Schema::dropIfExists('categoria_parceiros');
     }
 }
