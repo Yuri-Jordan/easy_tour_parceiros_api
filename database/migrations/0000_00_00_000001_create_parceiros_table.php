@@ -19,7 +19,7 @@ class CreateParceirosTable extends Migration
             $table->bigInteger('categoria_parceiros_id')->unsigned();
             $table->foreign('categoria_parceiros_id')
                   ->references('id')
-                  ->on('categoria_parceiros');
+                  ->on('categoria_parceiros')
                   ->onDelete('cascade');
             $table->char('cpf', 11);
             $table->char('cnpj', 14);
