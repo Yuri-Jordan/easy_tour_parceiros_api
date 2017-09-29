@@ -24,7 +24,7 @@ class CreatePontosTable extends Migration
           $table->foreign('proprietario_id')
                 ->references('id')
                 ->on('parceiros')
-                ->onDelete('cascade');;
+                ->onDelete('cascade');
           $table->string('nome', 100);
           $table->text('descricao');
           $table->decimal('latitude', 20, 14);
