@@ -11,6 +11,13 @@ class CategoriaParceiro extends Model
 
     protected $fillable = ['nome', 'tipo'];
 
+    public function parceiro()
+    {
+
+        return $this->hasOne('App\Parceiro');
+
+    }
+
     public function getAllCategoriaParceiros(){
       return self::all();
     }

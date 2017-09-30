@@ -20,7 +20,14 @@ class ParceiroController extends Controller
      */
     public function index()
     {
-        return $this->parceiro->getAllParceiros();
+        $p = $this->parceiro->getAllParceiros();
+
+        for ($i = 0; $i < sizeof($p); $i++) {
+            $p[$i]->categoriaParceiro;
+            $p[$i]->pontos;
+          }
+        return $p;
+
     }
 
     /**
@@ -54,10 +61,14 @@ class ParceiroController extends Controller
      */
      public function show($id)
      {
-         $cp = $this->parceiro->buscarParceiros($id);
-         if(!$cp) return 'não encontrado';
 
-         return $cp;
+       $p = $this->parceiro->buscarParceiros($id);
+       if(!$p) return 'não encontrado';
+
+        $p->categoriaParceiro;
+        $p->pontos;
+       return $p;
+
      }
 
     /**

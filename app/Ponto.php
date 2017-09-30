@@ -21,6 +21,11 @@ class Ponto extends Model
                             'qte_avaliacoes'
                           ];
 
+    public function proprietario()
+    {
+      return $this->belongsTo('App\Parceiro');
+    }
+
     public function getAllPontos(){
       return self::all();
     }

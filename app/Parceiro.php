@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Parceiro;
+use App\Ponto;
+use App\CategoriaParceiro;
 
 class Parceiro extends Model
 {
@@ -17,8 +19,20 @@ class Parceiro extends Model
                             'endereco'
                           ];
 
+    public function categoriaParceiro()
+    {
+      return $this->belongsTo('App\CategoriaParceiro', 'categoria_parceiros_id');
+    }
+
+    public function pontos()
+    {
+      return $this->hasMany('App\Ponto', 'proprietario_id');
+    }
+
     public function getAllParceiros(){
+
       return self::all();
+
     }
 
 
