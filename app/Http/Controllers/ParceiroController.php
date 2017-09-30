@@ -63,6 +63,7 @@ class ParceiroController extends Controller
      {
 
        $p = $this->parceiro->buscarParceiros($id);
+
        if(!$p) return 'não encontrado';
 
         $p->categoriaParceiro;
