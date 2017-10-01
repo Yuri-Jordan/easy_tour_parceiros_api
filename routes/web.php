@@ -12,7 +12,7 @@
 */
 
 
-Route::group('/', ['middleware' => 'cors', function()
+Route::any('/', ['middleware' => 'cors', function()
 {
   Route::get('/', function () {
       return view('welcome');
