@@ -14,11 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', ['middleware' => 'cors', function()
+{
+  Route::group(['prefix' => 'api'], function(){
 
-Route::group(['prefix' => 'api'], function(){
 
-  Route::resource('parceiros', 'ParceiroController');
-  Route::resource('pontos', 'PontoController');
-  Route::resource('categoriaParceiros', 'CategoriaParceiroController');
-  Route::resource('categoriaPontos', 'CategoriaPontoController');
-});
+    Route::resource('parceiros', 'ParceiroController');
+    Route::resource('pontos', 'PontoController');
+    Route::resource('categoriaParceiros', 'CategoriaParceiroController');
+    Route::resource('categoriaPontos', 'CategoriaPontoController');
+  });
+}]);
