@@ -11,18 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-// Route::group(['prefix' => 'api'], function(){
-//
-//
-//
-// });
-Route::get(['prefix' => 'api'], ['middleware' => 'cors', function()
+
+Route::get('/', ['middleware' => 'cors', function()
 {
-  Route::resource('parceiros', 'ParceiroController');
-  Route::resource('pontos', 'PontoController');
-  Route::resource('categoriaParceiros', 'CategoriaParceiroController');
-  Route::resource('categoriaPontos', 'CategoriaPontoController');
+  Route::get('/', function () {
+      return view('welcome');
+  });
+  
+  Route::group(['prefix' => 'api'], function(){
+
+
+    Route::resource('parceiros', 'ParceiroController');
+    Route::resource('pontos', 'PontoController');
+    Route::resource('categoriaParceiros', 'CategoriaParceiroController');
+    Route::resource('categoriaPontos', 'CategoriaPontoController');
+  });
 }]);
