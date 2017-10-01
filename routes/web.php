@@ -12,12 +12,12 @@
 */
 
 
-Route::get('/', ['middleware' => 'cors', function()
+Route::group('/', ['middleware' => 'cors', function()
 {
   Route::get('/', function () {
       return view('welcome');
   });
-  
+
   Route::group(['prefix' => 'api'], function(){
 
 
