@@ -11,10 +11,10 @@ class CategoriaParceiro extends Model
 
     protected $fillable = ['nome', 'tipo'];
 
-    public function parceiro()
+    public function parceiros()
     {
 
-        return $this->hasOne('App\Parceiro');
+        return $this->hasMany('App\Parceiro', 'categoria_parceiros_id');
 
     }
 

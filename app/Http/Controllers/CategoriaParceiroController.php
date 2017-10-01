@@ -54,10 +54,14 @@ class CategoriaParceiroController extends Controller
      */
     public function show($id)
     {
-        $cp = $this->cp->buscarCategoriaParceiros($id);
-        if(!$cp) return 'não encontrado';
 
-        return $cp;
+        $c = $this->cp->buscarCategoriaParceiros($id);
+
+        if(!$c) return 'não encontrado';
+
+         $c->parceiros;
+
+        return $c;
     }
 
     /**
