@@ -8,12 +8,25 @@ $factory->define(App\Parceiro::class, function (Faker $faker) {
           return factory('App\CategoriaParceiro')->create()->id;
         },
 
-        'cpf' => $faker->ssn(false),
         'cnpj' => $faker->ssn(false),
-        'nome_fantasia' => $faker->name($gender = null),
         'razao_social' => $faker->catchPhrase,
-        'endereco' => $faker->address,
-
+        'nome_fantasia' => $faker->company,
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
+        'logradouro' => $faker->address,
+        'numero' => $faker->randomDigit,
+        'complemento' => $faker->address,
+        'cep' => $faker->text($maxNbChars = 8),
+        'bairro' => $faker->city,
+        'municipio' => $faker->city,
+        'uf' => $faker->stateAbbr,
+        'pais' => $faker->country,
+        'email' => $faker->email,
+        'telefone' =>  $faker->text($maxNbChars = 8),
+        'responsavel' => $faker->name($gender = null),
+        'descricao' => $faker->text($maxNbChars = 100),
+        'media_avaliacao' => $faker->randomDigit,
+        'qte_avaliacoes' => $faker->randomNumber,
 
     ];
 });

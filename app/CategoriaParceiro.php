@@ -9,7 +9,7 @@ use App\CategoriaParceiro;
 class CategoriaParceiro extends Model
 {
 
-    protected $fillable = ['nome', 'tipo'];
+    protected $fillable = ['nome'];
 
     public function parceiros()
     {
@@ -26,7 +26,6 @@ class CategoriaParceiro extends Model
     public function criarCategoriaParceiros(Request $request){
       $c = new CategoriaParceiro();
       $c->nome = $request['nome'];
-      $c->tipo = $request['tipo'];
       $c->save();
       return $c;
     }

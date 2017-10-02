@@ -12,11 +12,26 @@ class Parceiro extends Model
 {
 
     protected $fillable = ['categoria_parceiros_id',
-                            'cpf',
                             'cnpj',
-                            'nome_fantasia',
                             'razao_social',
-                            'endereco'
+                            'nome_fantasia',
+                            'latitude',
+                            'longitude',
+                            'logradouro',
+                            'numero',
+                            'complemento',
+                            'cep',
+                            'bairro',
+                            'municipio',
+                            'uf',
+                            'pais',
+                            'email',
+                            'telefone',
+                            'responsavel',
+                            'descricao',
+                            'media_avaliacao',
+
+                            'qte_avaliacoes',
                           ];
 
     public function categoriaParceiro()
@@ -24,10 +39,6 @@ class Parceiro extends Model
       return $this->belongsTo('App\CategoriaParceiro', 'categoria_parceiros_id');
     }
 
-    public function pontos()
-    {
-      return $this->hasMany('App\Ponto', 'proprietario_id');
-    }
 
     public function getAllParceiros(){
 

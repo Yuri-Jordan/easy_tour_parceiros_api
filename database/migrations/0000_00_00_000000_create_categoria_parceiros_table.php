@@ -17,8 +17,6 @@ class CreateCategoriaParceirosTable extends Migration
             $table->increments('id');
 
             $table->string('nome', 100);
-            $table->string('tipo', 100);
-
             $table->timestamps();
         });
     }
