@@ -20,7 +20,12 @@ class CategoriaParceiroController extends Controller
      */
     public function index()
     {
-        return $this->cp->getAllCategoriaParceiros();
+        $p = $this->cp->getAllCategoriaParceiros();
+
+        for($i = 0; $i < sizeof($p); $i++){
+          $p[$i]->parceiros;
+        }
+        return $p;
     }
 
     /**
