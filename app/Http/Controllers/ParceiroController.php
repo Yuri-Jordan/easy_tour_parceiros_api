@@ -83,6 +83,11 @@ class ParceiroController extends Controller
         //
     }
 
+    public function editPost(Request $req, $id)
+    {
+        return $this->update($req, $id);
+    }
+
     /**
      * Update the specified resource in storage.
      *

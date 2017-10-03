@@ -82,7 +82,7 @@ class CategoriaParceiroController extends Controller
 
     public function editPost($id, Request $req)
     {
-        return($id);
+        return $this->update($req, $id);
     }
 
     /**
