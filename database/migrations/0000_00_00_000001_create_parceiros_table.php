@@ -22,25 +22,25 @@ class CreateParceirosTable extends Migration
                   ->on('categoria_parceiros')
                   ->onDelete('cascade');
 
-            $table->char('cnpj', 14);
-            $table->string('razao_social', 100);
+            $table->char('cnpj', 14)->nullable();
+            $table->string('razao_social', 100)->nullable();
             $table->string('nome_fantasia', 100);
             $table->decimal('latitude', 20, 14);
             $table->double('longitude', 20, 14);
-            $table->string('logradouro', 100);
-            $table->string('numero', 8);
-            $table->string('complemento', 100);
-            $table->string('cep', 8);
-            $table->string('bairro', 80);
-            $table->string('municipio', 80);
-            $table->string('uf', 2);
-            $table->string('pais', 100);
-            $table->string('email', 100);
-            $table->string('telefone', 11);
-            $table->string('responsavel', 100);
-            $table->text('descricao');
-            $table->decimal('media_avaliacao', 5, 4);
-            $table->bigInteger('qte_avaliacoes');
+            $table->string('logradouro', 100)->nullable();
+            $table->string('numero', 8)->nullable();
+            $table->string('complemento', 100)->nullable();
+            $table->string('cep', 8)->nullable();
+            $table->string('bairro', 80)->nullable();
+            $table->string('municipio', 80)->nullable();
+            $table->string('uf', 2)->nullable();
+            $table->string('pais', 100)->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('telefone', 11)->nullable();
+            $table->string('responsavel', 100)->nullable();
+            $table->text('descricao')->nullable();
+            $table->decimal('media_avaliacao', 5, 4)->nullable();
+            $table->bigInteger('qte_avaliacoes')->nullable();
 
             $table->timestamps();
 

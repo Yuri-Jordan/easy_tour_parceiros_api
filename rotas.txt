@@ -9,13 +9,6 @@
 |        | PUT|PATCH | api/categoriaParceiros/{categoriaParceiro}      | categoriaParceiros.update  | App\Http\Controllers\CategoriaParceiroController@update  | web          |
 |        | DELETE    | api/categoriaParceiros/{categoriaParceiro}      | categoriaParceiros.destroy | App\Http\Controllers\CategoriaParceiroController@destroy | web          |
 |        | GET|HEAD  | api/categoriaParceiros/{categoriaParceiro}/edit | categoriaParceiros.edit    | App\Http\Controllers\CategoriaParceiroController@edit    | web          |
-|        | GET|HEAD  | api/categoriaPontos                             | categoriaPontos.index      | App\Http\Controllers\CategoriaPontoController@index      | web          |
-|        | POST      | api/categoriaPontos                             | categoriaPontos.store      | App\Http\Controllers\CategoriaPontoController@store      | web          |
-|        | GET|HEAD  | api/categoriaPontos/create                      | categoriaPontos.create     | App\Http\Controllers\CategoriaPontoController@create     | web          |
-|        | GET|HEAD  | api/categoriaPontos/{categoriaPonto}            | categoriaPontos.show       | App\Http\Controllers\CategoriaPontoController@show       | web          |
-|        | PUT|PATCH | api/categoriaPontos/{categoriaPonto}            | categoriaPontos.update     | App\Http\Controllers\CategoriaPontoController@update     | web          |
-|        | DELETE    | api/categoriaPontos/{categoriaPonto}            | categoriaPontos.destroy    | App\Http\Controllers\CategoriaPontoController@destroy    | web          |
-|        | GET|HEAD  | api/categoriaPontos/{categoriaPonto}/edit       | categoriaPontos.edit       | App\Http\Controllers\CategoriaPontoController@edit       | web          |
 |        | GET|HEAD  | api/parceiros                                   | parceiros.index            | App\Http\Controllers\ParceiroController@index            | web          |
 |        | POST      | api/parceiros                                   | parceiros.store            | App\Http\Controllers\ParceiroController@store            | web          |
 |        | GET|HEAD  | api/parceiros/create                            | parceiros.create           | App\Http\Controllers\ParceiroController@create           | web          |
@@ -23,12 +16,5 @@
 |        | PUT|PATCH | api/parceiros/{parceiro}                        | parceiros.update           | App\Http\Controllers\ParceiroController@update           | web          |
 |        | DELETE    | api/parceiros/{parceiro}                        | parceiros.destroy          | App\Http\Controllers\ParceiroController@destroy          | web          |
 |        | GET|HEAD  | api/parceiros/{parceiro}/edit                   | parceiros.edit             | App\Http\Controllers\ParceiroController@edit             | web          |
-|        | GET|HEAD  | api/pontos                                      | pontos.index               | App\Http\Controllers\PontoController@index               | web          |
-|        | POST      | api/pontos                                      | pontos.store               | App\Http\Controllers\PontoController@store               | web          |
-|        | GET|HEAD  | api/pontos/create                               | pontos.create              | App\Http\Controllers\PontoController@create              | web          |
-|        | GET|HEAD  | api/pontos/{ponto}                              | pontos.show                | App\Http\Controllers\PontoController@show                | web          |
-|        | PUT|PATCH | api/pontos/{ponto}                              | pontos.update              | App\Http\Controllers\PontoController@update              | web          |
-|        | DELETE    | api/pontos/{ponto}                              | pontos.destroy             | App\Http\Controllers\PontoController@destroy             | web          |
-|        | GET|HEAD  | api/pontos/{ponto}/edit                         | pontos.edit                | App\Http\Controllers\PontoController@edit                | web          |
 |        | GET|HEAD  | api/user                                        |                            | Closure                                                  | api,auth:api |
 +--------+-----------+-------------------------------------------------+----------------------------+----------------------------------------------------------+--------------+

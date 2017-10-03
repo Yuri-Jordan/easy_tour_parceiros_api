@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'api'], function(){
-
+  Route::post('/parceiros/{id}',  [
+    'uses' => 'CategoriaParceiroController@editPost',
+  ]);
   Route::resource('parceiros', 'ParceiroController');
   Route::resource('categoriaParceiros', 'CategoriaParceiroController');
 

@@ -80,6 +80,11 @@ class CategoriaParceiroController extends Controller
         //
     }
 
+    public function editPost($id, Request $req)
+    {
+        return($id);
+    }
+
     /**
      * Update the specified resource in storage.
      *
