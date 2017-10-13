@@ -40,6 +40,11 @@ class ParceiroController extends Controller
         //
     }
 
+    public function parceirosAdmin()
+    {
+        return datatables()->of(Parceiro::all())->toJson();
+    }
+
     /**
      * Store a newly created resource in storage.
      *

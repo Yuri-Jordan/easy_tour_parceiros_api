@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'api'], function(){
+  Route::get('/parceirosAdmin', [
+      'uses' => 'ParceiroController@parceirosAdmin',
+  ]);
   Route::post('/parceiros/{id}',  [
     'uses' => 'ParceiroController@editPost',
   ]);
