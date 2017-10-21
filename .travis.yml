@@ -1,9 +1,8 @@
 language: php
 php:
-  - 5.5
-  - 7.0
   - 7.1
-
+addons:
+  postgresql: "9.6"
 before_script:
   - composer install --no-interaction
   - psql -c "CREATE DATABASE teste;" -U postgres
