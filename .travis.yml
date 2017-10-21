@@ -6,5 +6,8 @@ php:
 
 before_script:
   - composer install --no-interaction
+  - psql -c "CREATE DATABASE teste;" -U postgres
+  - cp .env.travis .env
+  - php artisan migrate
 script:
   - phpunit
